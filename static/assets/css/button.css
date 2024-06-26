@@ -1,0 +1,23 @@
+
+
+.btn--downloa{
+    padding: 10px;
+    font-size: 10px;
+    position: fixed;
+    bottom: 200px;
+    right: 50%;
+    color: #00ff80;
+    background-color:blue;
+    
+    box-shadow: 0 6px 23px rgba(230, 75, 3, 0.4);
+    animation: fade-up 0.5s 0.4s;
+    cursor: pointer;
+
+
+
+}
+
+.btnn{
+    color: red;
+   
+}

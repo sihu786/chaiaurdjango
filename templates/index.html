@@ -1,0 +1,287 @@
+{% extends "layout.html" %}
+
+
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% block content %}
+ 
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Bikram Adak</h1>
+      <p>I'm <span class="typed" data-typed-items="Developer, Freelancer, Hacker"></span></p>
+      <div class="social-links">
+        {% for socal in socal_media  %}
+        
+        <a href="{{socal.facebook}}" class="facebook" target=blank><i class="bx bxl-facebook"></i></a>
+        <a href="{{socal.twitter}}" class="twitter" target=blank><i class="bx bxl-twitter"></i></a>
+        <a href="{{socal.instagram}}" class="instagram" target=blank><i class="bx bxl-instagram"></i></a>
+        <a href="{{socal.github}}" class="google-plus" target=blank><i class="bx bxl-github"></i></a>
+        <a href="{{socal.linkedin}}" class="linkedin" target=blank><i class="bx bxl-linkedin"></i></a>
+       
+        {% endfor %}
+      </div>
+      
+    </div>
+    
+    <a href="{{socal.cv_file.url}}" download class="btn btn--downloa"> <span class='btnn'>Download</span> CV</a>
+  </section><!-- End Hero -->
+  
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      {% for about in abouts %}
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          {% comment %} <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> {% endcomment %}
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="{{about.image.url}}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <h3>{{about.about_heading}}</h3>
+            <br>
+            <p class="fst-italic">
+              {{about.personal_info}}
+            </p>
+          </br>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{about.date_of_birth}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>{{about.website}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{about.phone_no}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{about.city}}</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{about.age}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>{{about.email}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{{about.freelance}}</span></li>
+                </ul>
+              </div>
+            </div>
+            <br>
+            <p >
+              {{about.about_me}}
+            </p>
+          </br>
+          </div>
+        </div>
+
+      </div>
+      {%endfor%}
+    </section><!-- End About Section -->
+
+    
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      {%for skill in skills%}
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>{{skill.about_skill}}</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">HTML <i class="val">{{skill.htlm}}%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">{{skill.css}}%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">{{skill.java_script}}%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">PYTHON <i class="val">{{skill.python}}%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">DJANGO <i class="val">{{skill.django}}%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Linux <i class="val">{{skill.linux}}%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+{%endfor%}
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+     
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        
+        <div class="con" id='ram'>
+            <div class="col-lg-10">
+
+            <h3 class="resume-title">Education</h3>
+            {%for resume in resumes%}
+            <div class="resume-item">
+              <h4>{{resume.name_of_degree}}</h4>
+              <h5>{{resume.year}}</h5>
+              <p><em>{{resume.institute_name_and_address}}</em></p>
+              {% comment %} <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> {% endcomment %}
+            </div> 
+            {%endfor%}
+            
+            
+            
+        
+        
+  
+          
+        
+         
+           
+       
+
+      </div>
+    
+    
+    </div>
+    
+    </section><!-- End Resume Section -->
+
+    
+
+    <!-- ======= Services Section ======= -->
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row mt-1">
+          {%for contact in abouts%}
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>{{contact.location}}</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>{{contact.email}}</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>{{contact.phone_no}}</p>
+              </div>
+              {%endfor%}
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="" method="" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message"  id="message"required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit" id="bt" >Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+{{form}}
+      </div>
+
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+      
+     
+    </section><!-- End Contact Section -->
+  <script src="{% static "js/contact.js" %}"></script>
+
+   
+
+  </main><!-- End #main -->
+
+ 
+
+
+
+
+{% endblock %}
